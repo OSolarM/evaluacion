@@ -14,3 +14,12 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('test/email', function(){
+  
+	$send_mail = 'osciel.solar@gmail.com';
+  
+    dispatch(new App\Jobs\SendEmailJob($send_mail));
+  
+    dd('send mail successfully !!');
+});
